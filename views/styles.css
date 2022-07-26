@@ -1,0 +1,148 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #e5e5e5;
+    text-align: center;
+}
+
+.icon {
+    margin: 20px 10px;
+}
+
+.navbar {
+    background-color: white;
+    color: #949494;
+    height: 80px;
+    overflow: auto;
+    border-left: 19.2px solid #609501;
+    text-align: left;
+}
+
+.searchbar {
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    border: 3.2px solid #609501;
+    font-size: 16px;
+    width: 240px;
+    height: 32px;
+}
+
+.cbtn {
+    background-color: #609501;
+    border-radius: 25px;
+    border: 3.2px solid transparent;
+    font-size: 16px;
+    color: white;
+    width: 80px;
+    height: 32px;
+}
+
+.cbtn-profile {
+    margin-right: auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-left: 35%;
+}
+
+.cbtn-tags {
+    margin-left: 25%;
+    border-radius: 25px 0 0 25px;
+}
+
+.searchbarForm {
+    display:  inline-block;
+}
+
+.va-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.navbarLogo {
+    margin-left: 16px;
+    height: 60%;
+    vertical-align: middle;
+}
+
+.news-row {
+    padding: 55px 0;
+    border-bottom: 3.2px solid #949494;
+}
+
+.news-row:last-child {
+    border-bottom: 0
+}
+
+.news-row:first-child {
+}
+
+.news-container {
+    margin-top: 8%;
+    border: 32px solid transparent;
+    border-radius: 12.8px;
+    background-color: white;
+}
+
+.news-title {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.news-item {
+    width: 400px;
+    height: 250px;
+    overflow: auto;
+    background-color: #e8e8e8;
+    color: black
+}
+
+.article-desc {
+    text-align: left;
+}
+
+.article-title {
+    margin-top: 10px;
+    text-align: left;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.article-footer {
+    text-align: right;
+    font-size: small;
+    color: #949494;
+}
+
+.article-img {
+    width: 200px;
+    height: 260px;
+    background-color: #e5e5e5;
+    object-fit: scale-down;
+}
+
+table {
+
+}
+
+input[type=text]:focus{
+    outline: 2px solid #77b504;
+}
+
+button:hover {
+    outline: 2px solid #77b504;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+        
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+
+}
