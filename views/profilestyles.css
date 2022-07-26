@@ -1,3 +1,11 @@
+body{
+  margin: 0px;
+  background-color: #e5e5e5;
+  /* border-left : 19.2px solid #609501; */
+  /* border-right: 19.2px solid #609501; */
+  /* text-align: center; */
+}
+
 .PersonalInfo{
   margin-top: 5%;
   margin-left: 10%;
@@ -35,14 +43,6 @@
   margin-left: 10%;
 }
 
-
-body{
-  margin: 0px;
-  background-color: #e5e5e5;
-  /* border-left : 19.2px solid #609501; */
-  /* border-right: 19.2px solid #609501; */
-  /* text-align: center; */
-}
 hr{
   margin-top: 10%;
   border: 0;
