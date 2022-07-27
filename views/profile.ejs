@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
 
   </head>
-  <body>
+  <body id="body">
     <div class="navbar">
             <span class="va-helper"></span>
             <img class="navbarLogo" src="images/Logo Realbay.png" alt="Realbay-Logo">
@@ -26,25 +26,31 @@
         </div>
 
     <!-- mainsite -->
-    <div class="PersonalInfo">
-      <img src="https://images.ctfassets.net/hrltx12pl8hq/5Bn4tHITZdTAQTkuX43hCk/46687c228ddc7325554601dff7d0ebc5/thumb_june22_03.jpg?fit=fill&w=240&h=135&fm=webp" alt="profilbild" class="profile-img">
-      <h1>⭐⭐⭐⭐</h1>
-      <h2>Max Mustermann</h2>
-      <h3>
-        Insta:
-        <a href="https://www.instagram.com/">
-          whesietsowas.ais
-        </a>
-        <br>
-        twitter:
-        <a href="https://twitter.com">
-          placeholder
-        </a>
-      </h3>
+    <div class=" card text-bg-success mb-5" id="PersonalInfo" style="max-width: 18rem;">
+      <div class="card-header fs-4">
+        Max Mustermann
+      </div>
+      <div class="card-body">
+        <img src="https://images.ctfassets.net/hrltx12pl8hq/5Bn4tHITZdTAQTkuX43hCk/46687c228ddc7325554601dff7d0ebc5/thumb_june22_03.jpg?fit=fill&w=240&h=135&fm=webp" alt="profilbild" class="profile-img">
+        <p class = "fs-5">
+          Insta:
+          <a href="https://www.instagram.com/">
+            whesietsowas.ais
+          </a>
+          <br>
+          twitter:
+          <a href="https://twitter.com">
+            placeholder
+          </a>
+        </p>
+      </div>
+
     </div>
+
     <div class="bio">
       <h1>Bio</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temriatur. Excepteur sint occaecat cupidatat noit anim id est laborum.</p>
+      <h2>⭐⭐⭐⭐</h2>
     </div>
 
     <hr>
@@ -52,7 +58,7 @@
     <div class="container text-center news-container">
         <div class="news-row">
             <div class="row">
-                <h1 class="news-title">Neuste Dienstleistungen</h1>
+                <h1 class="news-title">Eingestellte Artikel</h1>
                 <div class="col-lg-4 col-sm-12">
                     <button class="cbtn news-item">
                         <div>
@@ -86,7 +92,7 @@
             </div>
         </div>
       </div>
-
+      <hr>
 
   </body>
 </html>
