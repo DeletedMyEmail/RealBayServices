@@ -1,4 +1,5 @@
 #body {
+    color: white;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -10,7 +11,8 @@
     margin: 20px 10px;
 }
 
-.navbar {
+.cnavbar {
+    padding: 10px;
     background-color: white;
     color: #949494;
     height: 80px;
@@ -55,12 +57,6 @@
     display:  inline-block;
 }
 
-.va-helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
 .navbarLogo {
     max-width: 100%;
     max-height: 100%;
@@ -82,7 +78,7 @@
     margin-top: 8%;
     border: 32px solid transparent;
     border-radius: 12.8px;
-    background-color: white;
+    background-color: #609501;
 }
 
 .news-title {
@@ -96,7 +92,7 @@
     width: 400px;
     height: 320px;
     overflow: auto;
-    background-color: #e5e5e5;
+    background-color: white;
     color: black
 }
 
@@ -130,6 +126,10 @@ input[type=text]:focus{
 
 button:hover {
     outline: 2px solid #77b504;
+}
+
+.footer {
+    color: black
 }
 
 /* For Mobile */

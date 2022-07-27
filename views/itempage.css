@@ -1,8 +1,91 @@
-.main-container {
-    margin: 8% auto;
+table {
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+hr {
+    margin-top: 40px;
+    background-color: #e5e5e5;;
+}
+
+h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+h2 {
+    color: white;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.container {
+    margin: 6% auto;
     width: 80%;
     height: 600px;
     border: 1px solid transparent;
     border-radius: 12.8px;
-    background-color: white;
+    background-color: #609501;
+    justify-content: space-between;
+    display: flex;
+    vertical-align: middle;
+    color: white;
 }
+
+.article-txt {
+    margin: 30px 20px;
+    text-align: left;
+}
+
+.article-info {
+    margin-top: 40px;
+}
+
+.article-img-lg {
+    margin: 30px 20px;
+    border-radius: 25px;
+    background-color: #e8e8e8;
+    padding: 20px;
+    object-fit: scale-down;
+    width: 400px;
+    height: 540px;
+    vertical-align: middle;
+}
+
+
+.merchant {
+    padding: 50px;
+    text-align: left;
+    height: 200px;
+    justify-content: start;
+}
+
+.merchant-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.merchant-desc {
+    margin: 40px 0 auto 20px;
+}
+
+.merchant-btn {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+    background: url("images/cat.png");
+    background-size: 100px
+}
+
+.merchant-btn:hover {
+    outline: 2px solid white;
+}
+

@@ -5,19 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
+
     <link rel="stylesheet" href="itempage.css">
     <link rel="stylesheet" href="styles.css">
     
     <script src="https://kit.fontawesome.com/b2cb25ccdb.js" crossorigin="anonymous"></script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
-
     <title>RealBay</title>
 </head>
 <body id="body">
     
-    <div class="navbar">
+    <div class="cnavbar">
         <img class="navbarLogo" src="images/Logo.png" alt="Realbay-Logo">
         <button class="cbtn-tags cbtn">Tags</button>
 
@@ -29,9 +28,50 @@
         <button class="cbtn cbtn-profile"><i class="fa-solid fa-user"></i></button>
     </div>
 
-    <div class="main-container">
-
+    <div class="container">
+        <img src="images/cat.png" class="article-img-lg" alt="article-img">
+        <div class="article-txt">
+            <h1 >Süße Katze</h1>
+            <p class="describtion-sm">
+                Will meine Katze verkaufen, kotzt zu viel.
+            </p>
+            <p class="describtion-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, eligendi perspiciatis quae consequuntur excepturi tempore exercitationem natus, aliquam hic voluptates alias. Rem distinctio assumenda corrupti, explicabo illo sed optio! Earum.
+            </p>
+            <hr>
+            <h2>Produktinormationen</h2>
+            <table class="article-info">
+                <tr>
+                    <td>Gewicht</td>
+                    <td>20kg</td>
+                </tr>
+                <tr>
+                    <td>Größe</td>
+                    <td>80cm*10cm*20cm</td>
+                </tr>
+                <tr>
+                    <td>Alter</td>
+                    <td>12 Jahre</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
+    <div class="merchant container">
+        <button class="merchant-btn" ></button>
+        <div style="margin: 20px 0 0 20px">
+            <h2>Merchant</h2>
+            <p>⭐⭐⭐⭐⭐</p>        
+        </div>
+    </div>
+
+    <footer>
+        <i class="fa-brands fa-1x fa-twitter responsive-icon icon"></i>
+        <i class="fa-brands fa-1x fa-instagram responsive-icon icon"></i>
+        <i class="fa-brands fa-1x fa-facebook-f responsive-icon icon"></i>
+        <i class="fa-solid fa-1x fa-envelope responsive-icon icon"></i>
+        <p>© Copyright</p>
+    </footer>
 
 </body>
 </html>
