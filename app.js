@@ -8,16 +8,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("views"));
 
 app.get('/', function(req, res) {
-    res.render("index.ejs");
+    res.render("home.ejs");
 });
 
 app.get('/profile', function(req, res) {
     res.render("profile.ejs");
 });
 
+app.get('/itempage', function(req, res) {
+    res.render("itempage.ejs");
+});
+
 app.post("/", function(req, res) {
     const searchInput = req.body.searchInput;
-    res.render(searchInput);
+    res.send(searchInput);
 });
 
 app.listen(process.env.PORT || 3000, function() {

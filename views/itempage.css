@@ -1,0 +1,8 @@
+.main-container {
+    margin: 8% auto;
+    width: 80%;
+    height: 600px;
+    border: 1px solid transparent;
+    border-radius: 12.8px;
+    background-color: white;
+}
