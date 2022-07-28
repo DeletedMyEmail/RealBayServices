@@ -1,10 +1,14 @@
 #body {
-    color: white;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     background-color: #e5e5e5;
     text-align: center;
+}
+#logobtn{
+  border: 0;
+  padding:0;
+  margin: 0;
 }
 
 .icon {
@@ -61,7 +65,7 @@
     max-width: 100%;
     max-height: 100%;
     margin-left: 0%;
-    height: 60%;
+    height: 100%;
     vertical-align: middle;
 }
 
@@ -134,7 +138,7 @@ button:hover {
 
 /* For Mobile */
 @media screen and (max-width: 540px) {
-        
+
 }
 
 /* For Tablets */

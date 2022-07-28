@@ -1,0 +1,27 @@
+.cbody{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.fc{
+  background-color: #609501;
+  border-radius: 12.8px;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  justify-content: space-around;
+  padding: 2%;
+  text-align: left;
+  width: 300px;
+}
+.bo-w{
+    border-width: medium;
+    border-style: solid;
+    border-color: white;
+}
+.bo-w:hover{
+      outline: 2px solid white;
+}

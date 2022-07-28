@@ -19,11 +19,28 @@ app.get('/itempage', function(req, res) {
     res.render("itempage.ejs");
 });
 
+
+app.get('/login', function(req, res) {
+    res.render("login.ejs");
+});
+
+app.get('/register', function(req, res) {
+    res.render("register.ejs");
+});
+
 app.post("/", function(req, res) {
     const searchInput = req.body.searchInput;
     res.send(searchInput);
 });
 
+app.post("/login", function(req, res) {
+  res.redirect("/profile");
+});
+
+app.post("/register", function(req, res) {
+  res.redirect("/profile");
+});
+
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server online");
-}); 
+});
