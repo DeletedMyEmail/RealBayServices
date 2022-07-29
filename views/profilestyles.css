@@ -5,17 +5,17 @@
 #PersonalInfo{
   margin-top: 5%;
   margin-left: 10%;
-  height: 50%;
+  height: 700px !important;
   width: 20%;
   display: inline-block;
   text-align: center;
   background-color: #609501 !important;
   padding: 10px;
-  /* border-radius: 10%; */
+  position: static;
+  overflow: auto;
 }
+
 .profile-img {
-  /* border-width: thin; */
-  /* border-style: solid; */
   width: 10vw;
   height: 10vw;
   object-fit: cover;
@@ -23,24 +23,25 @@
   background-size: cover;
   margin: 30px auto 50px auto;
 }
+
 .socials{
   text-align: left;
+  height: 200px;
 }
+
 .bio{
     vertical-align: top;
-    margin-left: 9%;
-    margin-right: 18%;
+    margin-left: 8%;
     margin-top: 5%;
     padding: 20px;
     /* background-color: #609501; */
-    height:50vh;
-    width: 40%;
+    height: 600px;
+    width: 44%;
     display: inline-block;
     text-align: left;
     /* border-style: ridge; */
     /* border-width: medium; */
     border-radius: 12.8px;
-    position: absolute;
     background-color: #609501;
     color: white;
 }
@@ -57,11 +58,8 @@ hr{
   margin-top: 50px;
   border: 0;
   height: 1px;
-  /* background-image: -webkit-linear-gradient(left, #e5e5e5, #609501, #e5e5e5); */
-  /* background-image: -moz-linear-gradient(left, #e5e5e5, #609501, #e5e5e5); */
-  /* background-image: -ms-linear-gradient(left, #e5e5e5, #609501, #e5e5e5); */
-  /* background-image: -o-linear-gradient(left, #e5e5e5, #609501, #e5e5e5); */
-!important}
+}
+
 #link{
   color: white;
   font-weight: normal;
@@ -139,6 +137,20 @@ hr{
   margin-left: 15%;
 }
 
+.carousel-control-prev:hover, .carousel-control-next:hover, .carousel-control-prev:active, .carousel-control-next:active, .carousel-control-prev:focus, .carousel-control-next:focus {
+  color: white;
+}
+
+.carousel-control-next {
+  margin-left:20px;
+  color: white;
+}
+
+.carousel-control-prev {
+  margin-right:20px;
+  color: white;
+}
+
 #carouselExampleControls{
-  margin-top: 50px;
+  margin-top: 80px;
 }

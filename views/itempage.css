@@ -62,7 +62,7 @@ h2 {
     padding: 50px;
     text-align: left;
     height: 200px;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .merchant-img {
