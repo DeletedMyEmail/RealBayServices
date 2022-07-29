@@ -71,12 +71,6 @@ a {
 .cbtn-tags {
     border-radius: 25px 0 0 25px;
 }
-
-.c-cou-cntr{
-background-color: lightgrey;
-border-radius: 19.2px;
-}
-
 .searchForm {
     vertical-align: middle;
     display:  inline-block;
@@ -183,19 +177,12 @@ border-radius: 19.2px;
      display: block;
 }
 
-
-.carousel-control-prev:hover, .carousel-control-next:hover, .carousel-control-prev:active, .carousel-control-next:active, .carousel-control-prev:focus, .carousel-control-next:focus {
-    color: black;
-}
-
 .carousel-control-next {
-    margin-left:20px;
-    color: #949494;
+    padding-left: 200px;
   }
 
   .carousel-control-prev {
-    margin-right:20px;
-    color: #949494;
+    padding-right: 200px;
   }
 
 input[type=text]:focus{
