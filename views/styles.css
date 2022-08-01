@@ -23,6 +23,9 @@ a {
 }
 
 .cnavbar {
+    &.btn {
+        outline: 2px solid #609501;
+    }
     display: flex;
     padding: 10px;
     background-color: white;
@@ -59,10 +62,6 @@ a {
 
 .cbtn:hover {
     outline: 2px solid white;
-}
-
-.cbtn:hover .navbar>.cbtn {
-    outline: 2px solid #609501;
 }
 
 .cbtn-profile {
@@ -182,9 +181,9 @@ a {
     padding-left: 200px;
   }
 
-  .carousel-control-prev {
+.carousel-control-prev {
     padding-right: 200px;
-  }
+}
 
 .cookies {
     width: 100%;
