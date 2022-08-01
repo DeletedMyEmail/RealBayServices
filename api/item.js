@@ -7,23 +7,15 @@ router.use((req, res, next) => {
     next();
 })
 
-/* router.param("id", (req, res, next, id)=>{
-    req.user = {
-        "UserID": id,
-        "UserName": sqlHandler.getUserNameById(id),
-    }
-    next();
-}) */
-
 router.get("/search/:name", (req, res) => {
-    con.query("SELECT * FROM User WHERE UserName LIKE ?",["%"+req.params.name+"%"], (err, rows, fields) => {
+    con.query("SELECT * FROM Item WHERE ItemName LIKE ?",["%"+req.params.name+"%"], (err, rows, fields) => {
         if (err) res.send(err.message);
         else res.send(rows);
     });
 })
 
 router.get("/:id", (req, res) => {
-    con.query("SELECT * FROM User WHERE UserID=?",[req.params.id], (err, rows, fields) => {
+    con.query("SELECT * FROM Item WHERE ItemID=?",[req.params.id], (err, rows, fields) => {
         if (err) res.send(err.message);
         else res.send(rows[0]);
     });

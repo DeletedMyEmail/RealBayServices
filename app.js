@@ -1,13 +1,13 @@
-const express = require('express', '4.18.1');
 const bodyParser = require('body-parser');
+const express = require('express', '4.18.1');
 const app = express();
+const http = require('http');
 
-const userRoute = require('./api/user.js')
+const apiAddress = "http://localhost:4242/";
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("views"));
-app.use('/user', userRoute);
 
 app.get('/', function(req, res) {
     res.render("home.ejs");
@@ -30,8 +30,15 @@ app.get('/register', function(req, res) {
 });
 
 app.post("/", function(req, res) {
-    const searchInput = req.body.searchInput;
-    res.send(searchInput);
+    console.log(req.body.searchInput);
+    http.get(apiAddress+"user/"+req.body.searchInput, function(responds) 
+    {
+        responds.on("data", function(data) 
+        {
+            const userData = JSON.parse(data);
+            res.send(userData);
+        });
+    });
 });
 
 app.post("/login", function(req, res) {
