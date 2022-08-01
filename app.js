@@ -1,11 +1,13 @@
 const express = require('express', '4.18.1');
 const bodyParser = require('body-parser');
 const app = express();
-const https = require('https');
+
+const userRoute = require('./api/user.js')
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("views"));
+app.use('/user', userRoute);
 
 app.get('/', function(req, res) {
     res.render("home.ejs");
@@ -18,7 +20,6 @@ app.get('/profile', function(req, res) {
 app.get('/itempage', function(req, res) {
     res.render("itempage.ejs");
 });
-
 
 app.get('/login', function(req, res) {
     res.render("login.ejs");
@@ -41,6 +42,6 @@ app.post("/register", function(req, res) {
   res.redirect("/profile");
 });
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(3000, function() {
     console.log("Server online");
 });
