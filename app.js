@@ -13,10 +13,6 @@ app.get('/', function(req, res) {
     res.render("home.ejs");
 });
 
-app.get('/profile', function(req, res) {
-    res.render("profile.ejs");
-});
-
 app.get('/itempage', function(req, res) {
     res.render("itempage.ejs");
 });
@@ -30,15 +26,16 @@ app.get('/register', function(req, res) {
 });
 
 app.post("/", function(req, res) {
-    console.log(req.body.searchInput);
     http.get(apiAddress+"user/"+req.body.searchInput, function(responds) 
     {
         responds.on("data", function(data) 
         {
             const userData = JSON.parse(data);
-            res.send(userData);
+            if (!Object.keys(userData).length) res.render('errorpage.ejs',{error: "Couldn't find user"});
+            else if (userData) res.render("profile.ejs", {Bio: userData.Bio,UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Instagram: userData.Instagram, Facebook: userData.Facebook, Tel: userData.Tel});
+            else res.end()
         });
-    });
+    }); 
 });
 
 app.post("/login", function(req, res) {

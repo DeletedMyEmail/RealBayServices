@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="dropdown.js" defer></script>
+  <script src="https://kit.fontawesome.com/b2cb25ccdb.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous" defer></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+  <title>RealBayServices</title>
+</head>
+
+<body id="body">
+
+  <div class="cnavbar">
+    <button id="logobtn" class="navbarLogo" type="button" name="button">
+      <img class="navbarLogo" src="images/Logo.png" alt="Realbay-Logo">
+    </button>
+
+    <form class="searchForm" action="/" method="post">
+      <div class="dropdown-center">
+        <button class="cbtn cbtn-tags" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tags</button>
+        <ul class="dropdown-menu">
+          <li>
+            <input class="dropdown-item" name="c1-checkbox" type="checkbox">
+            <label for="c1-checkbox"> Dienstleistungen</label>
+          </li>
+          <li> <a class="dropdown-item" href="#"> Dropdown item 2 &raquo; </a>
+            <ul class="submenu dropdown-menu">
+              <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
+              <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
+              <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                <ul class="submenu dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Multi level 1</a></li>
+                  <li><a class="dropdown-item" href="#">Multi level 2</a></li>
+                </ul>
+              </li>
+              <li><a class="dropdown-item" href="#">Submenu item 4</a></li>
+              <li><a class="dropdown-item" href="#">Submenu item 5</a></li>
+            </ul>
+          </li>
+          <li><a class="dropdown-item" href="#"> Dropdown item 3 </a></li>
+          <li><a class="dropdown-item" href="#"> Dropdown item 4 </a></li>
+        </ul>
+      </div>
+
+      <input class="searchbar" type="text" name="searchInput">
+      <button class="cbtn" type="submit">Search</button>
+    </form>
+
+    <button class="cbtn cbtn-profile"><i class="fa-solid fa-user"></i></button>
+  </div>
+
+  <div class="error-div">
+    <%=error%>
+  </div>
+</body>
+</html>
