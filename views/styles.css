@@ -22,10 +22,8 @@ a {
     margin: 20px 10px;
 }
 
+
 .cnavbar {
-    &.btn {
-        outline: 2px solid #609501;
-    }
     display: flex;
     padding: 10px;
     background-color: white;
@@ -185,15 +183,30 @@ a {
     padding-right: 200px;
 }
 
+
 .cookies {
     width: 100%;
     height: 100px;
-    opacity: 60%;
-    background-color: #949494;
+    background-color: #a1b2c6a9;
     position: sticky;
     bottom: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.cookie-text {
+    font-weight: bold;
+    color: white;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+}
+
+.cbtn-cookies {
+    margin-right: 20px;
+    width: fit-content;
+    height: fit-content;
+    vertical-align: middle;
 }
 
 input[type=text]:focus{
