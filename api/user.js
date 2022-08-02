@@ -15,8 +15,8 @@ router.use((req, res, next) => {
     next();
 }) */
 
-router.get("/search/:name", (req, res) => {
-    con.query("SELECT * FROM User WHERE UserName LIKE ?",["%"+req.params.name+"%"], (err, rows, fields) => {
+router.get("/search/:name/:limit", (req, res) => {
+    con.query("SELECT * FROM User WHERE UserName LIKE ? LIMIT ?",["%"+req.params.name+"%", parseInt(req.params.limit)], (err, rows, fields) => {
         if (err) res.send(err.message);
         else res.send(rows);
     });
