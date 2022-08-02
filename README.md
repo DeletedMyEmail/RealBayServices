@@ -14,6 +14,16 @@ Bereits implementiert sind:
 * Frontend mit Beispieldaten
 * Userprofile via Searchbar finden
 
+<!-- API -->
+## API
+
+Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
+
+### Anwendung
+
+Alle öffentlichen Daten eines Nutzers bekmmen:
+<sub>Test</sub>
+
 <!-- Roadmap -->
 ## Roadmap
 

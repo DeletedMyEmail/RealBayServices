@@ -3,7 +3,7 @@ const router = express.Router();
 const con = require('../dbConnector.js').con
 
 router.use((req, res, next) => {
-    console.log(new Date().toLocaleString());
+    console.log(new Date().toLocaleString()+": "+next);
     next();
 })
 
@@ -29,5 +29,13 @@ router.get("/:id", (req, res) => {
         else res.send(rows);
     });
 })
+
+router.get("/:id/items", (req,res) => {
+    con.query("SELECT * FROM Item WHERE MerchantID=?",[req.params.id],(err, rows, fields) => {
+        if (err) res.send(err.message);
+        else res.send(rows);
+    })
+})
+
 
 module.exports = router;

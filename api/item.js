@@ -21,24 +21,40 @@ router.get("/:id", (req, res) => {
     });
 })
 
-router.get("/recommendations/:category/:amount/", (req, res) => {
-    console.log(req.params)
-    if (['all', 'service', 'bet', 'product'].includes(req.params.category)) {
-        if (req.params.category == "all") {
-            con.query("SELECT * FROM Item ORDER BY AvgRating LIMIT ?",[parseInt(req.params.amount)], (err, rows, fields) => {
+router.get("/recommendations/:category/:amount", (req, res) => {
+    var {
+        amount,
+        category
+    } = req.params
+    amount = parseInt(amount)
+    switch(req.params.category) {
+        case "ignore":
+            con.query("SELECT * FROM Item ORDER BY AvgRating LIMIT ?", [amount], (err, rows, fields) => {
                 if (err) res.send(err.message);
                 else res.send(rows);
-            });    
-        }
-        else {
-            con.query("SELECT * FROM Item WHERE Category=? ORDER BY AvgRating LIMIT ?",[req.params.category,parseInt(req.params.amount)], (err, rows, fields) => {
+            }); 
+            break
+        case "foreach":
+            sqlStatement = `SELECT * FROM Item WHERE Category='product' ORDER BY AvgRating LIMIT ?;
+                            SELECT * FROM Item WHERE Category='service' ORDER BY AvgRating LIMIT ?;
+                            SELECT * FROM Item WHERE Category='bet' ORDER BY AvgRating LIMIT ?;`
+            
+            con.query(sqlStatement, [amount, amount, amount], (err, rows, fields) => {
                 if (err) res.send(err.message);
                 else res.send(rows);
-            });    
-        }
-    }
-    else {
-        res.send({"error":"Syntax: /recommendations/category/amount , category has to be bet, service, product or all"})
+            }); 
+            break
+        case "service":
+        case "bet":
+        case "product":
+            con.query("SELECT * FROM Item WHERE Category=? ORDER BY AvgRating LIMIT ?", [category, amount], (err, rows, fields) => {
+                if (err) res.send(err.message);
+                else res.send(rows);
+            }); 
+            break;
+        default:
+            res.send({"error":"Syntax: /recommendations/category/amount , category has to be bet, service, product, ignore or foreach"})
+            return
     }
 })
 
