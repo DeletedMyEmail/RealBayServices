@@ -19,10 +19,10 @@ Bereits implementiert sind:
 
 Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
 
-### Anwendung
+#### Anwendung
 
 Alle öffentlichen Daten eines Nutzers bekmmen:
-<sub>Test</sub>
+> Test
 
 <!-- Roadmap -->
 ## Roadmap
