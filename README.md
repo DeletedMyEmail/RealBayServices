@@ -26,7 +26,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 **Syntax**
 ```
 /user/:id
-=> öffentliche Daten in JASON Format
+=> öffentliche Daten im JASON Format
 ```
 **Beispiel**
 ```
@@ -49,7 +49,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 **Syntax**
 ```
 /user/:id/items
-=> Item in in JASON Format
+=> Array von Items im JASON Format
 ```
 
 **Beispiel**
@@ -83,6 +83,46 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 },
 ]
 ```
+
+- Nach Nutzernahmen suchen
+
+**Syntax**
+```
+/search/:name/:limit
+=> Array von Nutzerdaten, bei denen die Nutzernamen die Variable :name enthalten, im JASON Format mit einer maximalen ANzahl an Nutzern definiert durch :limit 
+```
+
+**Beispiel**
+```
+/user/search/a/2 
+=>
+[
+{
+"UserID": 1,
+"UserName": "LinusDerHuan",
+"PwHash": ".lkjhzsdertfzguhij",
+"Email": "examplemail@mail.com",
+"Location": "RealCoreGroup Essen, ETEC",
+"Tel": "+49 0123455678",
+"Twitter": "@Linus_huan_der",
+"LinkedIn": "Linus Huan",
+"Bio": "Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan!"
+},
+{
+"UserID": 2,
+"UserName": "FranzWillhelm",
+"PwHash": "fgjk34drt7zhui9lp",
+"Email": "hallo@bye.tschüss",
+"Location": "IndeinerMom",
+"Tel": "",
+"Twitter": "",
+"LinkedIn": "",
+"Bio": ""
+}
+]
+```
+
+
 <!-- Roadmap -->
 ## Roadmap
 
