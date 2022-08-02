@@ -21,6 +21,8 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 #### Anwendung
 
+##### User
+
 - Alle öffentlichen Daten eines Nutzers bekommen:
 
 **Syntax**
@@ -44,6 +46,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "Bio": ""
 }
 ```
+
 - Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
 
 **Syntax**
@@ -120,6 +123,33 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "Bio": ""
 }
 ]
+```
+
+##### Items
+
+- Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
+
+**Syntax**
+```
+/item/:id
+=> Item Daten im JASON Format
+```
+**Beispiel**
+```
+/item/:id
+=>
+{
+"ItemID": 1,
+"MerchantID": 1,
+"ItemName": "Ball",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "product",
+"AvgRating": 10
+}
 ```
 
 
