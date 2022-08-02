@@ -3,7 +3,7 @@ const router = express.Router();
 const con = require('../dbConnector.js').con
 
 router.use((req, res, next) => {
-    console.log(new Date().toLocaleString()+": "+next);
+    console.log(new Date().toLocaleString());
     next();
 })
 
