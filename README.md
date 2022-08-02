@@ -22,6 +22,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 #### Anwendung
 
 Alle öffentlichen Daten eines Nutzers bekmmen:
+
 **Syntax**
 > /user/:id
 > => öffentliche Daten in JASON Format
