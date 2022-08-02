@@ -49,7 +49,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 > => Item in in JASON Format
  
 **Beispiel**
-> /user/1/items
+> /user/1/items <br>
 > =>
 > [
 >{
