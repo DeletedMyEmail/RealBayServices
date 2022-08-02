@@ -21,7 +21,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 #### Anwendung
 
-Alle öffentlichen Daten eines Nutzers bekmmen:
+- Alle öffentlichen Daten eines Nutzers bekommen:
 
 **Syntax**
 > /user/:id
@@ -41,6 +41,43 @@ Alle öffentlichen Daten eines Nutzers bekmmen:
 > "LinkedIn": "", 
 > "Bio": ""
 > }
+
+- Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
+
+**Syntax**
+> /user/:id/items
+> => Item in in JASON Format
+ 
+**Beispiel**
+> /user/1/items
+> =>
+> [
+>{
+>"ItemID": 1,
+>"MerchantID": 1,
+>"ItemName": "Ball",
+>"TimeLimit": "2022-07-29T22:00:00.000Z",
+>"Stock": 4,
+>"PricePerItem": 0,
+>"LongDescription": "Testestetstesttetstettetstetstetst",
+>"ShortDescription": "Testtestets",
+>"Category": "product",
+>"AvgRating": 10
+>},
+>{
+>"ItemID": 2,
+>"MerchantID": 1,
+>"ItemName": "Tee holen",
+>"TimeLimit": "2022-07-29T22:00:00.000Z",
+>"Stock": 1,
+>"PricePerItem": 0,
+>"LongDescription": "Testestetstesttetstettetstetstetst",
+>"ShortDescription": "Testtestets",
+>"Category": "service",
+>"AvgRating": 10
+>},
+>]
+
 
 <!-- Roadmap -->
 ## Roadmap
