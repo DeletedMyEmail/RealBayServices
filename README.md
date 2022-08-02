@@ -24,24 +24,26 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 - Alle öffentlichen Daten eines Nutzers bekommen:
 
 **Syntax**
-> /user/:id
-> => öffentliche Daten in JASON Format
- 
+```
+/user/:id
+=> öffentliche Daten in JASON Format
+```
 **Beispiel**
-> /user/1
-> =>
-> {
-> "UserID": 1,
-> "UserName": "",
-> "PwHash": "",
-> "Email": "",
-> "Location": "",
-> "Tel": "",
-> "Twitter": "",
-> "LinkedIn": "", 
-> "Bio": ""
-> }
-
+```
+/user/1
+=>
+{
+"UserID": 1,
+"UserName": "",
+"PwHash": "",
+"Email": "",
+"Location": "",
+"Tel": "",
+"Twitter": "",
+"LinkedIn": "", 
+"Bio": ""
+}
+```
 - Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
 
 **Syntax**
