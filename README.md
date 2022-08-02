@@ -47,67 +47,42 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 - Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
 
 **Syntax**
-> /user/:id/items
-> => Item in in JASON Format
- 
-**Beispiel**
-> /user/1/items 
-<br>
-> =>
-<br>
-> [
-<br>
->{
-<br>
->"ItemID": 1,
-<br>
->"MerchantID": 1,
-<br>
->"ItemName": "Ball",
-<br>
->"TimeLimit": "2022-07-29T22:00:00.000Z",
-<br>
->"Stock": 4,
-<br>
->"PricePerItem": 0,
-<br>
->"LongDescription": "Testestetstesttetstettetstetstetst",
-<br>
->"ShortDescription": "Testtestets",
-<br>
->"Category": "product",
-<br>
->"AvgRating": 10
-<br>
->},
-<br>
->{
-<br>
->"ItemID": 2,
-<br>
->"MerchantID": 1,
-<br>
->"ItemName": "Tee holen",
-<br>
->"TimeLimit": "2022-07-29T22:00:00.000Z",
-<br>
->"Stock": 1,
-<br>
->"PricePerItem": 0,
-<br>
->"LongDescription": "Testestetstesttetstettetstetstetst",
-<br>
->"ShortDescription": "Testtestets",
-<br>
->"Category": "service",
-<br>
->"AvgRating": 10
-<br>
->},
-<br>
->]
-<br>
+```
+/user/:id/items
+=> Item in in JASON Format
+```
 
+**Beispiel**
+```
+/user/1/items 
+=>
+[
+{
+"ItemID": 1,
+"MerchantID": 1,
+"ItemName": "Ball",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 4,
+"PricePerItem": 0,
+"LongDescription": "Testestetstesttetstettetstetstetst",
+"ShortDescription": "Testtestets",
+"Category": "product",
+"AvgRating": 10
+},
+{
+"ItemID": 2,
+"MerchantID": 1,
+"ItemName": "Tee holen",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "Testestetstesttetstettetstetstetst",
+"ShortDescription": "Testtestets",
+"Category": "service",
+"AvgRating": 10
+},
+]
+```
 <!-- Roadmap -->
 ## Roadmap
 
