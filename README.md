@@ -5,7 +5,7 @@
 
 ![RealBay Home Screen](readme/RealBayHomeScreen.png)
 
-Jeder kennt das Problem, wenn der Tee mal wieder leer ist, der Weg zu den Azubis zu lang ist, um sie zu zwingen, das zu ändern.
+Jeder kennt das Problem, wenn der Tee mal wieder leer ist und der Weg zu den Azubis zu lang ist, um sie zu zwingen, das zu ändern.
 Für diesen Fall haben wir 'RealBay Services' Entwickelt, die Seite für firmeninterne Dienstleistungen, Wetten und Produkte.
 Bereits implementiert sind:
 
@@ -19,15 +19,32 @@ Bereits implementiert sind:
 
 Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
 
-### Anwendung
+#### Anwendung
 
 Alle öffentlichen Daten eines Nutzers bekmmen:
-<sub>Test</sub>
+
+**Syntax**
+> /user/:id
+> => öffentliche Daten in JASON Format
+ 
+**Beispiel**
+> /user/1
+> =>
+> {
+> "UserID": 1,
+> "UserName": "",
+> "PwHash": "",
+> "Email": "",
+> "Location": "",
+> "Tel": "",
+> "Twitter": "",
+> "LinkedIn": "", 
+> "Bio": ""
+> }
 
 <!-- Roadmap -->
 ## Roadmap
 
-1. Carousel auf dem Home Screen mit API verbinden
-2. Settings zum Frontend hinzufügen
-3. Tags Dropdown Menu
-4. Login
+1. Settings zum Frontend hinzufügen
+2. Tags Dropdown Menu
+3. Login
