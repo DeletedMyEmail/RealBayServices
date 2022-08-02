@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express', '4.18.1');
 const app = express();
 const http = require('http');
-const apiAddress = "http://localhost:4242/";
+const apiAddress = "http://10.6.3.96:4242/";
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -31,7 +31,7 @@ app.post("/", function(req, res) {
         {
             const userData = JSON.parse(data);
             if (!Object.keys(userData).length) res.render('errorpage.ejs',{error: "Couldn't find user"});
-            else if (userData) res.render("profile.ejs", {Bio: userData.Bio,UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Tel: userData.Tel, Bio: userData.Bio, LinkedIn: userData.LinkedIn});
+            else if (userData) res.render("profile.ejs", {Bio: userData.Bio, UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Tel: userData.Tel, Bio: userData.Bio, LinkedIn: userData.LinkedIn});
             else res.end()
         });
     });
