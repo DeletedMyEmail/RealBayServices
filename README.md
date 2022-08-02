@@ -49,35 +49,62 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 > => Item in in JASON Format
  
 **Beispiel**
-> /user/1/items <br>
+> /user/1/items 
+<br>
 > =>
+<br>
 > [
+<br>
 >{
+<br>
 >"ItemID": 1,
+<br>
 >"MerchantID": 1,
+<br>
 >"ItemName": "Ball",
+<br>
 >"TimeLimit": "2022-07-29T22:00:00.000Z",
+<br>
 >"Stock": 4,
+<br>
 >"PricePerItem": 0,
+<br>
 >"LongDescription": "Testestetstesttetstettetstetstetst",
+<br>
 >"ShortDescription": "Testtestets",
+<br>
 >"Category": "product",
+<br>
 >"AvgRating": 10
+<br>
 >},
+<br>
 >{
+<br>
 >"ItemID": 2,
+<br>
 >"MerchantID": 1,
+<br>
 >"ItemName": "Tee holen",
+<br>
 >"TimeLimit": "2022-07-29T22:00:00.000Z",
+<br>
 >"Stock": 1,
+<br>
 >"PricePerItem": 0,
+<br>
 >"LongDescription": "Testestetstesttetstettetstetstetst",
+<br>
 >"ShortDescription": "Testtestets",
+<br>
 >"Category": "service",
+<br>
 >"AvgRating": 10
+<br>
 >},
+<br>
 >]
-
+<br>
 
 <!-- Roadmap -->
 ## Roadmap
