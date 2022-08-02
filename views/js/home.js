@@ -1,7 +1,7 @@
 var htmlcode =
   "<div id=\"carouselExampleControls\" class=\"carousel slide\" data-bs-ride=\"carousel\"><div class=\"carousel-inner\">";
 
-  http.get( "http://localhost:4242/item/", function(responds) 
+  http.get( "http://localhost:4242/item/", function(responds)
   {
       responds.on("data", function(data)
       {
