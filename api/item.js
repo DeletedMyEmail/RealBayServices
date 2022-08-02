@@ -21,4 +21,11 @@ router.get("/:id", (req, res) => {
     });
 })
 
+router.get("/recommendations", (req, res) => {
+    con.query("SELECT TOP 9 * FROM Item", (err, rows, fields) => {
+        if (err) res.send(err.message);
+        else res.send(rows[0]);
+    });
+})
+
 module.exports = router;
