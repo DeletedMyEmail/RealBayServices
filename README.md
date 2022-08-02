@@ -22,7 +22,8 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 ### Anwendung
 
 #### User
-<hr>
+<hr> 
+
 - Alle öffentlichen Daten eines Nutzers bekommen:
 
 ##### Syntax
@@ -127,6 +128,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 #### Item
 <hr>
+
 - Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
 
 ##### Syntax
