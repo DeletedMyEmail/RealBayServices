@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 01. Aug 2022 um 19:57
+-- Erstellungszeit: 02. Aug 2022 um 11:11
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -110,16 +110,20 @@ CREATE TABLE `user` (
   `UserName` text NOT NULL,
   `PwHash` text NOT NULL,
   `Email` text NOT NULL,
-  `Location` text NOT NULL
+  `Location` text NOT NULL,
+  `Tel` text NOT NULL,
+  `Twitter` text NOT NULL,
+  `LinkedIn` text NOT NULL,
+  `Bio` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Daten für Tabelle `user`
 --
 
-INSERT INTO `user` (`UserID`, `UserName`, `PwHash`, `Email`, `Location`) VALUES
-(1, 'LinusDerHuan', '.lkjhzsdertfzguhij', 'examplemail@mail.com', 'RealCoreGroup Essen, ETEC'),
-(2, 'FranzWillhelm', 'fgjk34drt7zhui9lp', 'hallo@bye.tschüss', 'IndeinerMom');
+INSERT INTO `user` (`UserID`, `UserName`, `PwHash`, `Email`, `Location`, `Tel`, `Twitter`, `LinkedIn`, `Bio`) VALUES
+(1, 'LinusDerHuan', '.lkjhzsdertfzguhij', 'examplemail@mail.com', 'RealCoreGroup Essen, ETEC', '+49 0123455678', '@Linus_huan_der', 'Linus Huan', 'Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan!'),
+(2, 'FranzWillhelm', 'fgjk34drt7zhui9lp', 'hallo@bye.tschüss', 'IndeinerMom', '', '', '', '');
 
 --
 -- Indizes der exportierten Tabellen

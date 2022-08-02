@@ -31,7 +31,7 @@ app.post("/", function(req, res) {
         {
             const userData = JSON.parse(data);
             if (!Object.keys(userData).length) res.render('errorpage.ejs',{error: "Couldn't find user"});
-            else if (userData) res.render("profile.ejs", {Bio: userData.Bio,UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Instagram: userData.Instagram, Facebook: userData.Facebook, Tel: userData.Tel});
+            else if (userData) res.render("profile.ejs", {Bio: userData.Bio,UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Tel: userData.Tel, Bio: userData.Bio, LinkedIn: userData.LinkedIn});
             else res.end()
         });
     });

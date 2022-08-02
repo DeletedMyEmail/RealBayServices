@@ -24,7 +24,6 @@ router.get("/search/:name", (req, res) => {
 
 router.get("/:id", (req, res) => {
     con.query("SELECT * FROM User WHERE UserID=?",[req.params.id], (err, rows, fields) => {
-        
         if (err) res.send(err.message);
         else if (rows[0]) res.send(rows[0]);
         else res.send(rows);
