@@ -1,7 +1,7 @@
 # RealBay Services
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# About The Project
 
 ![RealBay Home Screen](readme/RealBayHomeScreen.png)
 
@@ -15,23 +15,21 @@ Bereits implementiert sind:
 * Userprofile via Searchbar finden
 
 <!-- API -->
-## API
+# API
 
 Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
 
-### Anwendung
-
-#### User
+## User
 <hr> 
 
 - Alle öffentlichen Daten eines Nutzers bekommen:
 
-##### Syntax
+### Syntax
 ```
 /user/:id
 => öffentliche Daten im JASON Format
 ```
-##### Beispiel
+### Beispiel
 ```
 /user/1
 =>
@@ -50,13 +48,13 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 - Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
 
-##### Syntax
+### Syntax
 ```
 /user/:id/items
 => Array von Items im JASON Format
 ```
 
-##### Beispiel
+### Beispiel
 ```
 /user/1/items 
 =>
@@ -90,13 +88,13 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 - Nach Nutzernahmen suchen
 
-##### Syntax
+### Syntax
 ```
 /search/:name/:limit
 => Array von Nutzerdaten, bei denen die Nutzernamen die Variable :name enthalten, im JASON Format mit einer maximalen ANzahl an Nutzern definiert durch :limit 
 ```
 
-##### Beispiel
+### Beispiel
 ```
 /user/search/a/2 
 =>
@@ -126,17 +124,17 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 ]
 ```
 
-#### Item
+## Item
 <hr>
 
 - Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
 
-##### Syntax
+### Syntax
 ```
 /item/:id
 => Item Daten im JASON Format
 ```
-##### Beispiel
+### Beispiel
 ```
 /item/:id
 =>
@@ -156,7 +154,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 
 <!-- Roadmap -->
-## Roadmap
+# Roadmap
 
 1. Settings zum Frontend hinzufügen
 2. Tags Dropdown Menu
