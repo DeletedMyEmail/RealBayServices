@@ -24,12 +24,12 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 - Alle öffentlichen Daten eines Nutzers bekommen:
 
-### Syntax
+#### Syntax
 ```
 /user/:id
 => öffentliche Daten im JASON Format
 ```
-### Beispiel
+#### Beispiel
 ```
 /user/1
 =>
@@ -46,15 +46,17 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 }
 ```
 
+<hr>
+
 - Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
 
-### Syntax
+#### Syntax
 ```
 /user/:id/items
 => Array von Items im JASON Format
 ```
 
-### Beispiel
+#### Beispiel
 ```
 /user/1/items 
 =>
@@ -86,15 +88,17 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 ]
 ```
 
+<hr> 
+
 - Nach Nutzernahmen suchen
 
-### Syntax
+#### Syntax
 ```
 /search/:name/:limit
 => Array von Nutzerdaten, bei denen die Nutzernamen die Variable :name enthalten, im JASON Format mit einer maximalen ANzahl an Nutzern definiert durch :limit 
 ```
 
-### Beispiel
+#### Beispiel
 ```
 /user/search/a/2 
 =>
@@ -129,12 +133,12 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 - Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
 
-### Syntax
+#### Syntax
 ```
 /item/:id
 => Item Daten im JASON Format
 ```
-### Beispiel
+#### Beispiel
 ```
 /item/:id
 =>
