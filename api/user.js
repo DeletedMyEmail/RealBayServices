@@ -3,7 +3,7 @@ const router = express.Router();
 const con = require('../dbConnector.js').con
 
 router.use((req, res, next) => {
-    console.log(new Date().toLocaleString());
+    console.log(new Date().toLocaleString()+": "+next);
     next();
 })
 
@@ -15,8 +15,8 @@ router.use((req, res, next) => {
     next();
 }) */
 
-router.get("/search/:name", (req, res) => {
-    con.query("SELECT * FROM User WHERE UserName LIKE ?",["%"+req.params.name+"%"], (err, rows, fields) => {
+router.get("/search/:name/:limit", (req, res) => {
+    con.query("SELECT * FROM User WHERE UserName LIKE ? LIMIT ?",["%"+req.params.name+"%", parseInt(req.params.limit)], (err, rows, fields) => {
         if (err) res.send(err.message);
         else res.send(rows);
     });
@@ -29,5 +29,13 @@ router.get("/:id", (req, res) => {
         else res.send(rows);
     });
 })
+
+router.get("/:id/items", (req,res) => {
+    con.query("SELECT * FROM Item WHERE MerchantID=?",[req.params.id],(err, rows, fields) => {
+        if (err) res.send(err.message);
+        else res.send(rows);
+    })
+})
+
 
 module.exports = router;

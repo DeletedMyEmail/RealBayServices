@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 
 var con = mysql.createConnection({
+    multipleStatements: true,
     host: "localhost",
     user: "root",
     password: "sugh43-sa-!",
@@ -10,7 +11,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
 if (err) throw err;
-    console.log("Connected! ");
+    console.log("DB connected! ");
 });
 
 module.exports = {con}
