@@ -19,28 +19,141 @@ Bereits implementiert sind:
 
 Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
 
-#### Anwendung
+### Anwendung
 
-Alle öffentlichen Daten eines Nutzers bekmmen:
+#### User
+<hr> 
 
-**Syntax**
-> /user/:id
-> => öffentliche Daten in JASON Format
- 
-**Beispiel**
-> /user/1
-> =>
-> {
-> "UserID": 1,
-> "UserName": "",
-> "PwHash": "",
-> "Email": "",
-> "Location": "",
-> "Tel": "",
-> "Twitter": "",
-> "LinkedIn": "", 
-> "Bio": ""
-> }
+- Alle öffentlichen Daten eines Nutzers bekommen:
+
+##### Syntax
+```
+/user/:id
+=> öffentliche Daten im JASON Format
+```
+##### Beispiel
+```
+/user/1
+=>
+{
+"UserID": 1,
+"UserName": "",
+"PwHash": "",
+"Email": "",
+"Location": "",
+"Tel": "",
+"Twitter": "",
+"LinkedIn": "", 
+"Bio": ""
+}
+```
+
+- Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
+
+##### Syntax
+```
+/user/:id/items
+=> Array von Items im JASON Format
+```
+
+##### Beispiel
+```
+/user/1/items 
+=>
+[
+{
+"ItemID": 1,
+"MerchantID": 1,
+"ItemName": "Ball",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 4,
+"PricePerItem": 0,
+"LongDescription": "Testestetstesttetstettetstetstetst",
+"ShortDescription": "Testtestets",
+"Category": "product",
+"AvgRating": 10
+},
+{
+"ItemID": 2,
+"MerchantID": 1,
+"ItemName": "Tee holen",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "Testestetstesttetstettetstetstetst",
+"ShortDescription": "Testtestets",
+"Category": "service",
+"AvgRating": 10
+},
+]
+```
+
+- Nach Nutzernahmen suchen
+
+##### Syntax
+```
+/search/:name/:limit
+=> Array von Nutzerdaten, bei denen die Nutzernamen die Variable :name enthalten, im JASON Format mit einer maximalen ANzahl an Nutzern definiert durch :limit 
+```
+
+##### Beispiel
+```
+/user/search/a/2 
+=>
+[
+{
+"UserID": 1,
+"UserName": "LinusDerHuan",
+"PwHash": ".lkjhzsdertfzguhij",
+"Email": "examplemail@mail.com",
+"Location": "RealCoreGroup Essen, ETEC",
+"Tel": "+49 0123455678",
+"Twitter": "@Linus_huan_der",
+"LinkedIn": "Linus Huan",
+"Bio": "Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan!"
+},
+{
+"UserID": 2,
+"UserName": "FranzWillhelm",
+"PwHash": "fgjk34drt7zhui9lp",
+"Email": "hallo@bye.tschüss",
+"Location": "IndeinerMom",
+"Tel": "",
+"Twitter": "",
+"LinkedIn": "",
+"Bio": ""
+}
+]
+```
+
+#### Item
+<hr>
+
+- Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
+
+##### Syntax
+```
+/item/:id
+=> Item Daten im JASON Format
+```
+##### Beispiel
+```
+/item/:id
+=>
+{
+"ItemID": 1,
+"MerchantID": 1,
+"ItemName": "Ball",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "product",
+"AvgRating": 10
+}
+```
+
 
 <!-- Roadmap -->
 ## Roadmap
