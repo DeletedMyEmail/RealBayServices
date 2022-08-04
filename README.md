@@ -19,7 +19,8 @@ Already implemented are:
 
 The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
 
-## Item */item/...*
+## Item 
+following paths start with*/item/...*
 
 <hr>
 
@@ -39,11 +40,11 @@ The RealBay Services API grants GET access to user data relevant to public profi
 
 - Get items from categories
 
-#### Syntax
+**Syntax**
 ```
 /recommendations/:category/:amount/:minID/:maxID/:order
 ```
-#### Parameters
+**Parameters**
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
 | category | foreach, ignore, service, product, bet | get them for each category, get items and ignore the category, get items only from specific category |
