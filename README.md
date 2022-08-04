@@ -131,7 +131,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 ## Item
 <hr>
 
-- Alle Daten eines Produktes/einer Dienstleistung/einer Wette bekommen
+- Alle Daten eines Items
 
 #### Syntax
 ```
@@ -155,6 +155,42 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "AvgRating": 10
 }
 ```
+
+<hr>
+
+- 
+
+#### Syntax
+```
+/recommendations/:category/:amount/:minID
+=> Array von Kategorien, die jeweils mehrere Items als JASON Objekte halten || mehrere JASON Objekte aus einer Kategorie 
+```
+#### Parameter
+| Parameter | Possible values | Description |
+| ------------- | ------------- |
+| category | foreach, ignore, service, product, bet | get them for each category, get items and ignore the category, get items only from specific category |
+| amount | any integer | |
+| minID | any integer | |
+
+#### Beispiel
+```
+/item/:id
+=>
+{
+"ItemID": 1,
+"MerchantID": 1,
+"ItemName": "Ball",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "product",
+"AvgRating": 10
+}
+```
+
+
 
 
 <!-- Roadmap -->
