@@ -1,4 +1,4 @@
-document.getElementById("logobtn").addEventListener("click", function (){
+$(#logobtn).on("click", function (){
   window.location.href = "/";
 })
 
