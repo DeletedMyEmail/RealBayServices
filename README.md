@@ -17,7 +17,7 @@ Already implemented are:
 <!-- API -->
 # API
 
-The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
+The RealAPI grants GET access to public user data and all services, products and bets offered on 'RealBay Services'.
 
 ## Item 
 following paths start with */item/...*
