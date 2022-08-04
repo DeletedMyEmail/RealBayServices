@@ -25,7 +25,7 @@ router.get("/:id", (req, res) => {
 router.get("/:id/items/:limit", (req,res) => {
     req.params.limit = parseInt(req.params.limit )
     req.params.id = parseInt(req.params.id )
-    con.query("SELECT ItemName,ShortDescription,LongDescription,Stock,TimeLimit,PricePerItem,Category FROM Item WHERE MerchantID=? ORDER BY ItemID LIMIT ?",[req.params.id, req.params.limit],(err, rows, fields) => {
+    con.query("SELECT ItemID,ItemName,ShortDescription,LongDescription,Stock,TimeLimit,PricePerItem,Category FROM Item WHERE MerchantID=? ORDER BY ItemID LIMIT ?",[req.params.id, req.params.limit],(err, rows, fields) => {
         if (err) res.send(err.message);
         else res.send(rows);
     })
