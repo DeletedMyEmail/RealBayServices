@@ -14,4 +14,14 @@ if (err) throw err;
     console.log("DB connected! ");
 });
 
-module.exports = {con}
+function query(sql, args) {
+    return new Promise((resolve, reject) => {
+      con.query(sql, args, (err, rows) => {
+        if (err)
+          return reject(err)
+        resolve(rows)
+      })
+    })
+  }
+
+module.exports = {con, query}

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const con = require('../dbConnector.js').con
+const {con, query} = require('../dbConnector.js')
+
 
 router.use((req, res, next) => {
     console.log(new Date().toLocaleString());
@@ -21,26 +22,40 @@ router.get("/:id", (req, res) => {
     });
 })
 
-router.get("/recommendations/:category/:amount/:minID", (req, res) => {
+router.get("/recommendations/:category/:amount/:minID/:maxID/:order", async (req, res) => {
     var {
         amount,
         category,
-        minID
+        minID,
+        maxID,
+        order
     } = req.params
     amount = parseInt(amount)
+    if (minID == "ignore") minID = 0;
+    else minID = parseInt(minID)
+    if (maxID == "ignore") {
+        const result = await query("SELECT MAX(ItemID) AS id FROM Item"); 
+        maxID = result[0].id
+    };
+    if (order != "desc" && order != "asc") {
+        res.send({"error":"Syntax: /recommendations/:category/:amount/:minID/:maxID/:order , order has to be 'asc' or 'desc'"})
+        return
+    }
+
     switch(req.params.category) {
         case "ignore":
-            con.query("SELECT * FROM Item WHERE ItemID > ? ORDER BY AvgRating LIMIT ?", [minID,amount], (err, rows, fields) => {
+            con.query("SELECT * FROM Item WHERE ItemID BETWEEN ? AND ? ORDER BY ItemID "+order+" LIMIT ?;", [minID, maxID,amount], (err, rows, fields) => {
                 if (err) res.send(err.message);
                 else res.send(rows);
             }); 
             break
         case "foreach":
-            sqlStatement = `SELECT * FROM Item WHERE Category='product' AND ItemID > ? ORDER BY AvgRating LIMIT ?;
-                            SELECT * FROM Item WHERE Category='service' AND ItemID > ? ORDER BY AvgRating LIMIT ?;
-                            SELECT * FROM Item WHERE Category='bet' AND ItemID > ? ORDER BY AvgRating LIMIT ?;`
+            sqlStatement = `SELECT * FROM Item WHERE Category='product' AND ItemID BETWEEN ? AND ? ORDER BY ItemID `+order+` LIMIT ?;
+                            SELECT * FROM Item WHERE Category='service' AND ItemID BETWEEN ? AND ? ORDER BY ItemID `+order+` LIMIT ?;
+                            SELECT * FROM Item WHERE Category='bet' AND ItemID BETWEEN ? AND ? ORDER BY ItemID `+order+` LIMIT ?;
+                            `
             
-            con.query(sqlStatement, [minID, amount, minID, amount,minID, amount], (err, rows, fields) => {
+            con.query(sqlStatement, [minID, maxID, amount, minID, maxID, amount,minID, maxID, amount], (err, rows, fields) => {
                 if (err) res.send(err.message);
                 else res.send(rows);
             }); 
@@ -48,13 +63,13 @@ router.get("/recommendations/:category/:amount/:minID", (req, res) => {
         case "service":
         case "bet":
         case "product":
-            con.query("SELECT * FROM Item WHERE Category=? AND ItemID > ? ORDER BY AvgRating LIMIT ?", [category, minID, amount], (err, rows, fields) => {
+            con.query("SELECT * FROM Item WHERE Category=? AND ItemID BETWEEN ? AND ? ORDER BY ItemID "+order+" LIMIT ?", [category, minID, maxID, amount], (err, rows, fields) => {
                 if (err) res.send(err.message);
                 else res.send(rows);
             }); 
             break;
         default:
-            res.send({"error":"Syntax: /recommendations/category/amount/minID , category has to be bet, service, product, ignore or foreach"})
+            res.send({"error":"Syntax: /recommendations/:category/:amount/:minID/:maxID/:order , category has to be bet, service, product, ignore or foreach"})
             return
     }
 })
