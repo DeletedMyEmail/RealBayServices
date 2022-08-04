@@ -33,7 +33,7 @@ following paths start with */item/...*
 **Parameters**
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
-| id | any integer | id of the user whose data you will receive |
+| id | any integer | id of the item whose data you will receive |
 
 <hr>
 
@@ -66,6 +66,38 @@ following paths start with */item/...*
 | name | any string | string to search for in item names |
 | limit | any integer | maximum amount of users to return |
 
+
+## User 
+following paths start with */user/...*
+
+<hr>
+
+- All public data of a user
+
+**Syntax**
+```
+/:id
+```
+**Parameters**
+| Parameter | Possible values | Description |
+| ------------- | ------------- | ------------- |
+| id | any integer | id of the user whose data you will receive |
+
+<hr>
+
+- Get an array of user (with all public data) which have similar names
+
+**Syntax**
+```
+/search/:name/limit
+```
+**Parameters**
+| Parameter | Possible values | Description |
+| ------------- | ------------- | ------------- |
+| name | any string | string to search for in usernames |
+| limit | any integer | maximum amount of users to return |
+
+<hr>
 
 <!-- Roadmap -->
 # Roadmap
