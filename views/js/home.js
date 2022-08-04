@@ -38,7 +38,7 @@ const newCarouselItems = (itemArray, active) => {
 }
 
 const script = async () => {
-var recommendations = await fetchData(`http://10.6.3.96:4242/item/recommendations/foreach/6/-1`)
+var recommendations = await fetchData(`http://10.6.3.96:4242/item/recommendations/foreach/6/ignore/ignore/desc`)
 
 var htmlcode = "";
 const categories = [`Products`, `Services`, `Bets`];
@@ -69,20 +69,20 @@ recommendations.forEach((item, i) => {
   $(".news-container").prepend(htmlcode);
   
   $("#nextProducts").on("click", async () => {
-    const highestID = recommendations[0][recommendations[0].length-1].ItemID;
-    const newProduct= await fetchData(`http://10.6.3.96:4242/item/recommendations/product/3/`+highestID);
+    const lowestID = recommendations[0][recommendations[0].length-1].ItemID-1;
+    const newProduct= await fetchData(`http://10.6.3.96:4242/item/recommendations/product/3/ignore/`+lowestID+`/desc`);
     $("#carousel-inner0").append(newCarouselItems(newProduct, false));  
     recommendations[0] = recommendations[0].concat(newProduct);
   });
   $("#nextServices").on("click", async () => {
-      const highestID = recommendations[1][recommendations[1].length-1].ItemID;
-      const newServices = await fetchData(`http://10.6.3.96:4242/item/recommendations/service/3/`+highestID);
+      const lowestID = recommendations[1][recommendations[1].length-1].ItemID-1;
+      const newServices = await fetchData(`http://10.6.3.96:4242/item/recommendations/service/3/ignore/`+lowestID+`/desc`);
       $("#carousel-inner1").append(newCarouselItems(newServices, false));  
       recommendations[1] = recommendations[1].concat(newServices);
     });
   $("#nextBets").on("click", async () => {
-    const highestID = recommendations[3][recommendations[3].length-1].ItemID;
-    const newBets = await fetchData(`http://10.6.3.96:4242/item/recommendations/bet/3/`+highestID);
+    const lowestID = recommendations[3][recommendations[3].length-1].ItemID-1;
+    const newBets = await fetchData(`http://10.6.3.96:4242/item/recommendations/bet/3/ignore/`+lowestID+`/desc`);
     $("#carousel-inner3").append(newCarouselItems(newBets, false));  
     recommendations[3] = recommendations[3].concat(newBets);
   });  
