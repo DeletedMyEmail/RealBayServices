@@ -19,115 +19,6 @@ Already implemented are:
 
 The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
 
-## User
-<hr> 
-
-- Get all public data of a user:
-
-#### Syntax
-```
-/user/:id
-=> public data in JASON format
-```
-#### Example
-```
-/user/1
-=>
-{
-"UserID": 1,
-"UserName": "",
-"PwHash": "",
-"Email": "",
-"Location": "",
-"Tel": "",
-"Twitter": "",
-"LinkedIn": "", 
-"Bio": ""
-}
-```
-
-<hr>
-
-- Get all the latest products, services and bets offered by a user:
-
-#### Syntax
-```
-/user/:id/items
-=> array of items in JASON format
-```
-
-#### Example
-```
-/user/1/items 
-=>
-[
-{
-"ItemID": 1,
-"MerchantID": 1,
-"ItemName": "Ball",
-"TimeLimit": "2022-07-29T22:00:00.000Z",
-"Stock": 4,
-"PricePerItem": 0,
-"LongDescription": "testestestestestestestestest",
-"ShortDescription": "TestTests",
-"Category": "product",
-"AvgRating": 10
-},
-{
-"ItemID": 2,
-"MerchantID": 1,
-"ItemName": "GetTea",
-"TimeLimit": "2022-07-29T22:00:00.000Z",
-"Stock": 1,
-"PricePerItem": 0,
-"LongDescription": "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest",
-"ShortDescription": "TestTests",
-"Category": "service",
-}, "AvgRating": 10
-},
-]
-```
-
-<hr> 
-
-- Search for user names
-
-#### Syntax
-```
-/search/:name/:limit
-=> Array of user data where the user names contain the variable :name, in JASON format with a maximum number of users defined by :limit. 
-```
-
-#### Example
-```
-/user/search/a/2 
-=>
-[
-{
-}, "UserID",
-"UserName": "LinusDerHuan",
-"PwHash": ".lkjhzsdertfzguhij",
-"Email": "examplemail@mail.com",
-"Location": "RealCoreGroup Essen, ETEC",
-"Tel": "+49 0123455678",
-"Twitter":"@Linus_huan_der",
-"LinkedIn": "Linus Huan",
-"bio": "Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan!"
-},
-{
-"UserID": 2,
-"UserName": "FranzWillhelm",
-"PwHash": "fgjk34drt7zhui9lp",
-"Email": "hallo@bye.tschüss",
-"Location": "IndeinerMom",
-"Tel": "",
-"Twitter": "",
-"LinkedIn": "",
-"Bio": ""
-}
-]
-```
-
 ## Item
 <hr>
 
@@ -162,20 +53,47 @@ The RealBay Services API grants GET access to user data relevant to public profi
 
 #### Syntax
 ```
-/recommendations/:category/:amount/:minID
-=> array of categories, each holding multiple items as JASON objects || multiple JASON objects from one category. 
+/recommendations/:category/:amount/:minID/:maxID/:order
 ```
 #### Parameters
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
 | category | foreach, ignore, service, product, bet | get them for each category, get items and ignore the category, get items only from specific category |
 | amount | any integer | amount of items to get for each selected category |
-| minID | any integer | minimal id of the items to select (-1 to ignore) |
+| minID | ignore, any integer | minimal id of the items to select |
+| maxID | ignore, any integer | maximal id of the items to select |
+| order | desc, asc | descending  or ascending  order |
 
 #### Example
 ```
-/item/:id
+/recommendations/foreach/3/1/10/desc
 =>
+[
+[
+{
+"ItemID": 3,
+"MerchantID": 1,
+"ItemName": "Ball3",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "product",
+"AvgRating": 10
+},
+{
+"ItemID": 2,
+"MerchantID": 1,
+"ItemName": "Ball2",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "product",
+"AvgRating": 10
+},
 {
 "ItemID": 1,
 "MerchantID": 1,
@@ -183,11 +101,89 @@ The RealBay Services API grants GET access to user data relevant to public profi
 "TimeLimit": "2022-07-29T22:00:00.000Z",
 "Stock": 1,
 "PricePerItem": 0,
-"LongDescription": "sfwfsfsfssfwfsfssfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsffsfwfsffsffsfwfsffsffsfwfsffsfwfsffsffsfwfsffsfwfsffsffsfs",
-"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfs",
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
 "Category": "product",
 "AvgRating": 10
 }
+],
+[
+{
+"ItemID": 10,
+"MerchantID": 4,
+"ItemName": "Pizza holen",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "service",
+"AvgRating": 10
+},
+{
+"ItemID": 9,
+"MerchantID": 1,
+"ItemName": "Tee holen",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "service",
+"AvgRating": 10
+},
+{
+"ItemID": 8,
+"MerchantID": 1,
+"ItemName": "kochen",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "service",
+"AvgRating": 10
+}
+],
+[
+{
+"ItemID": 7,
+"MerchantID": 2,
+"ItemName": "kickern",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "bet",
+"AvgRating": 10
+},
+{
+"ItemID": 6,
+"MerchantID": 2,
+"ItemName": "kickern",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "bet",
+"AvgRating": 10
+},
+{
+"ItemID": 5,
+"MerchantID": 2,
+"ItemName": "kickern",
+"TimeLimit": "2022-07-29T22:00:00.000Z",
+"Stock": 1,
+"PricePerItem": 0,
+"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"Category": "bet",
+"AvgRating": 10
+}
+]
+]
 ```
 
 
