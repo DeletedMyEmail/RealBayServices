@@ -20,17 +20,17 @@ Already implemented are:
 The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
 
 ## Item 
-following paths start with*/item/...*
+following paths start with */item/...*
 
 <hr>
 
 - All public data of an item
 
-#### Syntax
+**Syntax**
 ```
 /:id
 ```
-#### Parameters
+**Parameters**
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
 | id | any integer | id of the user whose data you will receive |
