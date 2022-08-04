@@ -19,8 +19,7 @@ Already implemented are:
 
 The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
 
-## Item 
-all of the following paths start with /item
+## Item */item/...*
 
 <hr>
 
