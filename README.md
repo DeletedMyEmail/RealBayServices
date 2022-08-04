@@ -81,7 +81,7 @@ following paths start with */user/...*
 **Parameters**
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
-| id | any integer | id of the user whose data you will receive |
+| id | any integer | a user's id |
 
 <hr>
 
@@ -96,6 +96,20 @@ following paths start with */user/...*
 | ------------- | ------------- | ------------- |
 | name | any string | string to search for in usernames |
 | limit | any integer | maximum amount of users to return |
+
+<hr>
+
+- Get all item from a user
+
+**Syntax**
+```
+/:id/items/:limit
+```
+**Parameters**
+| Parameter | Possible values | Description |
+| ------------- | ------------- | ------------- |
+| id | any integer | a user's id |
+| limit | any integer | maximum amount of items to return |
 
 <hr>
 
