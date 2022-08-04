@@ -169,7 +169,7 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
 | category | foreach, ignore, service, product, bet | get them for each category, get items and ignore the category, get items only from specific category |
-| amount | any integer | |
+| amount | any integer |  |
 | minID | any integer | |
 
 #### Beispiel
