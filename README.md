@@ -5,31 +5,31 @@
 
 ![RealBay Home Screen](readme/RealBayHomeScreen.png)
 
-Jeder kennt das Problem, wenn der Tee mal wieder leer ist und der Weg zu den Azubis zu lang ist, um sie zu zwingen, das zu ändern.
-Für diesen Fall haben wir 'RealBay Services' Entwickelt, die Seite für firmeninterne Dienstleistungen, Wetten und Produkte.
-Bereits implementiert sind:
+Everyone knows the problem when the tea is empty again and the way to the trainees is too long to force them to change it.
+For this case we have developed 'RealBay Services', the site for in-house services, bets and products.
+Already implemented are:
 
-* Datenbank 
+* Database 
 * API 
-* Frontend mit Beispieldaten
-* Userprofile via Searchbar finden
+* Frontend with sample data
+* Find user profiles via searchbar
 
 <!-- API -->
 # API
 
-Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentliche Profile relevant sind, und alle angebotenen Dienstleistungen, Produkte und Wetten.
+The RealBay Services API grants GET access to user data relevant to public profiles and all services, products and bets offered.
 
 ## User
 <hr> 
 
-- Alle öffentlichen Daten eines Nutzers bekommen:
+- Get all public data of a user:
 
 #### Syntax
 ```
 /user/:id
-=> öffentliche Daten im JASON Format
+=> public data in JASON format
 ```
-#### Beispiel
+#### Example
 ```
 /user/1
 =>
@@ -48,15 +48,15 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 
 <hr>
 
-- Alle aktuellen Produkte, Dienstleistungen und Wetten, die ein User anbietet bekommen:
+- Get all the latest products, services and bets offered by a user:
 
 #### Syntax
 ```
 /user/:id/items
-=> Array von Items im JASON Format
+=> array of items in JASON format
 ```
 
-#### Beispiel
+#### Example
 ```
 /user/1/items 
 =>
@@ -68,51 +68,51 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "TimeLimit": "2022-07-29T22:00:00.000Z",
 "Stock": 4,
 "PricePerItem": 0,
-"LongDescription": "Testestetstesttetstettetstetstetst",
-"ShortDescription": "Testtestets",
+"LongDescription": "testestestestestestestestest",
+"ShortDescription": "TestTests",
 "Category": "product",
 "AvgRating": 10
 },
 {
 "ItemID": 2,
 "MerchantID": 1,
-"ItemName": "Tee holen",
+"ItemName": "GetTea",
 "TimeLimit": "2022-07-29T22:00:00.000Z",
 "Stock": 1,
 "PricePerItem": 0,
-"LongDescription": "Testestetstesttetstettetstetstetst",
-"ShortDescription": "Testtestets",
+"LongDescription": "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest",
+"ShortDescription": "TestTests",
 "Category": "service",
-"AvgRating": 10
+}, "AvgRating": 10
 },
 ]
 ```
 
 <hr> 
 
-- Nach Nutzernahmen suchen
+- Search for user names
 
 #### Syntax
 ```
 /search/:name/:limit
-=> Array von Nutzerdaten, bei denen die Nutzernamen die Variable :name enthalten, im JASON Format mit einer maximalen ANzahl an Nutzern definiert durch :limit 
+=> Array of user data where the user names contain the variable :name, in JASON format with a maximum number of users defined by :limit. 
 ```
 
-#### Beispiel
+#### Example
 ```
 /user/search/a/2 
 =>
 [
 {
-"UserID": 1,
+}, "UserID",
 "UserName": "LinusDerHuan",
 "PwHash": ".lkjhzsdertfzguhij",
 "Email": "examplemail@mail.com",
 "Location": "RealCoreGroup Essen, ETEC",
 "Tel": "+49 0123455678",
-"Twitter": "@Linus_huan_der",
+"Twitter":"@Linus_huan_der",
 "LinkedIn": "Linus Huan",
-"Bio": "Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan Moin, ich bin der Linus und nen Huan!"
+"bio": "Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan Moin, I'm the Linus and nen Huan!"
 },
 {
 "UserID": 2,
@@ -131,14 +131,14 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 ## Item
 <hr>
 
-- Alle Daten eines Items
+- All data of an item
 
 #### Syntax
 ```
 /item/:id
-=> Item Daten im JASON Format
+=> Item data in JASON format
 ```
-#### Beispiel
+#### Example
 ```
 /item/:id
 =>
@@ -149,8 +149,8 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "TimeLimit": "2022-07-29T22:00:00.000Z",
 "Stock": 1,
 "PricePerItem": 0,
-"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
-"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"LongDescription": "sfwfsfsfssfwfsfssfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsffsfwfsffsffsfwfsffsffsfwfsffsfwfsffsffsfwfsffsfwfsffsffsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfs",
 "Category": "product",
 "AvgRating": 10
 }
@@ -163,16 +163,16 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 #### Syntax
 ```
 /recommendations/:category/:amount/:minID
-=> Array von Kategorien, die jeweils mehrere Items als JASON Objekte halten || mehrere JASON Objekte aus einer Kategorie 
+=> array of categories, each holding multiple items as JASON objects || multiple JASON objects from one category. 
 ```
-#### Parameter
+#### Parameters
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
 | category | foreach, ignore, service, product, bet | get them for each category, get items and ignore the category, get items only from specific category |
-| amount | any integer |  |
-| minID | any integer | |
+| amount | any integer | amount of items to get for each selected category |
+| minID | any integer | minimal id of the items to select (-1 to ignore) |
 
-#### Beispiel
+#### Example
 ```
 /item/:id
 =>
@@ -183,8 +183,8 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 "TimeLimit": "2022-07-29T22:00:00.000Z",
 "Stock": 1,
 "PricePerItem": 0,
-"LongDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
-"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfsfssfwfsfsfs",
+"LongDescription": "sfwfsfsfssfwfsfssfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsfwfsffsffsfwfsffsffsfwfsffsffsfwfsffsfwfsffsffsfwfsffsfwfsffsffsfs",
+"ShortDescription": "sfwfsfsfssfwfsfsfssfwfsfs",
 "Category": "product",
 "AvgRating": 10
 }
@@ -196,6 +196,6 @@ Die RealBay Services API gewährt GET-Zugriff auf Nutzerdaten, die für öffentl
 <!-- Roadmap -->
 # Roadmap
 
-1. Settings zum Frontend hinzufügen
-2. Tags Dropdown Menu
-3. Login
+1. add settings to the frontend
+2. tags dropdown menu
+3. login
