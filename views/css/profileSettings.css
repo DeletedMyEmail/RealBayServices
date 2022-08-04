@@ -1,0 +1,18 @@
+.main-container {
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.vertical-nav {
+    width: 12%;
+    height: 300px;
+    background-color: #609501;
+}
+
+.settings-div {
+    background-color: #609501;
+    width: 70%;
+    height: 800px;
+}

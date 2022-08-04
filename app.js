@@ -24,6 +24,11 @@ app.get('/register', function(req, res) {
     res.render("register.ejs");
 });
 
+app.get('/profilesettings', function(req, res) {
+    res.render("profileSettings.ejs");
+});
+
+
 app.post("/", function(req, res) {
     http.get(apiAddress+"user/"+req.body.searchInput, function(responds)
     {
