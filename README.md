@@ -35,7 +35,6 @@ following paths start with */item/...*
 | ------------- | ------------- | ------------- |
 | id | any integer | id of the user whose data you will receive |
 
-
 <hr>
 
 - Get items from categories
@@ -52,6 +51,20 @@ following paths start with */item/...*
 | minID | ignore, any integer | minimal id of the items to select |
 | maxID | ignore, any integer | maximal id of the items to select |
 | order | desc, asc | descending  or ascending  order |
+
+<hr>
+
+- Get an array of users (with all public data) which have similar names
+
+**Syntax**
+```
+/search/:name/limit
+```
+**Parameters**
+| Parameter | Possible values | Description |
+| ------------- | ------------- | ------------- |
+| name | any string | string to search for in usernames |
+| limit | any integer | maximum amount of users to return |
 
 
 <!-- Roadmap -->
