@@ -2,17 +2,56 @@
     text-align: center;
     color: white;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin: 25px ;
 }
 
 .vertical-nav {
     width: 12%;
     height: 300px;
     background-color: #609501;
+    border-radius: 12.8px;
+    margin: 25px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
 
 .settings-div {
     background-color: #609501;
     width: 70%;
     height: 800px;
+    border-radius: 12.8px;
+    margin: 25px ;
+}
+.cbtn-ver-nav{
+  margin-top: 50px;
+  border: 2px;
+  border-style: solid;
+  border-color: white;
+}
+
+#profile-button{
+  outline: 2px solid white;
+}
+#PersonalInfo{
+  margin-left: 5%;
+  width:25%;
+}
+
+#NameTag{
+  width:inherit;
+  text-align: center;
+}
+.green{
+  background-color:#609501;
+  padding: 0 0 0 0;
+  text-align: center;
+}
+input , textarea{
+  background-color: #609501;
+  border: none;
+  color: white;
+  display: inline-block;
 }

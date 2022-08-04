@@ -24,8 +24,21 @@ app.get('/register', function(req, res) {
     res.render("register.ejs");
 });
 
-app.get('/profilesettings', function(req, res) {
-    res.render("profileSettings.ejs");
+app.get('/itemSettings', function(req, res) {
+    res.render("itemSettings.ejs");
+});
+
+app.get('/profileSettings', function(req, res) {
+  http.get(apiAddress+"user/1", function(responds)
+  {
+      responds.on("data", function(data)
+      {
+          const userData = JSON.parse(data);
+          if (!Object.keys(userData).length) res.render('errorpage.ejs',{error: "Couldn't find user"});
+          else if (userData) res.render("profileSettings.ejs", {Bio: userData.Bio, UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, Tel: userData.Tel, Bio: userData.Bio, LinkedIn: userData.LinkedIn});
+          else res.end()
+      });
+  });
 });
 
 

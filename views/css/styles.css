@@ -149,10 +149,6 @@ a {
     text-align: left;
 }
 
-.footer {
-    color: black
-}
-
 .dropdown-center {
     display: inline-block;
 }
@@ -221,4 +217,8 @@ a {
 
 input[type=text]:focus{
     outline: 2px solid #77b504;
+}
+footer{
+    text-align: center;
+    color: black
 }

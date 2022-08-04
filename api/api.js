@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express(); 
+const app = express();
 const cors = require("cors");
 
 app.use(cors({
@@ -17,4 +17,4 @@ app.use('/item', itemRoute);
 
 app.listen(4242, function() {
     console.log("API online");
-});
+}); 
