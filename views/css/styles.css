@@ -22,7 +22,6 @@ a {
     margin: 20px 10px;
 }
 
-
 .cnavbar {
     display: flex;
     padding: 10px;
@@ -66,23 +65,24 @@ a {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    margin-left: 33vw;
+    right: 0;
+    margin: auto;
 }
 
 .cbtn-tags {
     border-radius: 19.2px 0 0 19.2px;
 }
 .searchForm {
+    width: fit-content;
     vertical-align: middle;
-    display:  inline-block;
-    margin: auto 0 auto 28%;
-    overflow: visible;
+    margin: auto 28vw auto 27vw;
 }
 
 .navbarLogo {
     object-fit: cover;
-    width: 100%;
+    width: fit-content;
     height: 100%;
+    left: 0;
     vertical-align: middle;
 }
 
@@ -112,7 +112,8 @@ a {
 }
 
 .news-item {
-    width: 400px;
+    width: 100%;
+    min-width: fit-content;
     height: 320px;
     overflow: auto;
     background-color: white;
@@ -176,11 +177,11 @@ a {
 }
 
 .carousel-control-next {
-    padding-left: 200px;
-  }
+    right: -6.5vw;
+}
 
 .carousel-control-prev {
-    padding-right: 200px;
+    left: -6.5vw;
 }
 
 .cookies {
