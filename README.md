@@ -54,7 +54,7 @@ following paths start with */item/...*
 
 <hr>
 
-- Get an array of users (with all public data) which have similar names
+- Get an array of items (with all public data) which have similar names
 
 **Syntax**
 ```
@@ -63,7 +63,7 @@ following paths start with */item/...*
 **Parameters**
 | Parameter | Possible values | Description |
 | ------------- | ------------- | ------------- |
-| name | any string | string to search for in usernames |
+| name | any string | string to search for in item names |
 | limit | any integer | maximum amount of users to return |
 
 
