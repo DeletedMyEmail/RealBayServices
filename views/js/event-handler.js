@@ -6,10 +6,10 @@ $('.cookies').on('click', function() {
   $(this).hide();
 })
 
-$(#profile-button).on("click", function (){
+$("#profile-button").on("click", function (){
   window.location.href = "/profileSettings";
 })
 
-$(#items-button).on("click", function (){
+$("#items-button").on("click", function (){
   window.location.href = "/itemSettings";
 })
