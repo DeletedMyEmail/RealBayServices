@@ -158,7 +158,7 @@ The RealBay Services API grants GET access to user data relevant to public profi
 
 <hr>
 
-- 
+- Get newest items from categories
 
 #### Syntax
 ```
