@@ -6,6 +6,19 @@
     margin: 25px ;
 }
 
+
+.news-title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.news-row {
+    padding: 0 0;
+}
+
 .vertical-nav {
     width: 8%;
     height: 300px;
@@ -20,9 +33,9 @@
 }
 
 .settings-div {
-    background-color: #609501;
+     background-color:#609501;
     width: 70%;
-    height: 800px;
+    height: 700px;
     border-top-right-radius:   12.8px;
     border-bottom-right-radius:12.8px;
     border-bottom-left-radius: 12.8px;
@@ -66,7 +79,7 @@
   }
 
   .container {
-      margin: 6% auto;
+      /* margin: 6% auto; */
       width: 80%;
       height: 600px;
       border: 1px solid transparent;
@@ -129,3 +142,27 @@
   .merchant-btn:hover {
       outline: 2px solid white;
   }
+
+.h1{
+  font-size: 10;
+
+}
+
+.TimeLimit{
+  position: absolute;
+  right:260px;
+  bottom:5px;
+}
+
+.Category{
+  position: absolute;
+  left:410px;
+  bottom:5px;
+}
+.input{
+display: block;
+background-color: #609501;
+color: white;
+border: none;
+
+}
