@@ -42,7 +42,7 @@ app.get('/profileSettings', function(req, res) {
 });
 
 
-app.post("/", function(req, res) {
+app.post("/userprofile", function(req, res) {
     http.get(apiAddress+"user/"+req.body.searchInput, function(responds)
     {
         responds.on("data", function(data)

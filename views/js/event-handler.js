@@ -1,4 +1,4 @@
-$(#logobtn).on("click", function (){
+$("#logobtn").on("click", function (){
   window.location.href = "/";
 })
 
