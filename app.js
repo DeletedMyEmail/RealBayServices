@@ -1,14 +1,21 @@
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const express = require('express', '4.18.1');
 const app = express();
 const http = require('http');
-const apiAddress = "http://10.6.3.96:4242/";
+
+const {con, query} = require('./dbConnector.js')
+const {encryptString, hash} = require('./encryption.js')
+
+const apiAddress = "http://localhost:4242/";
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser())
 app.use(express.static("views"));
 
 app.get('/', function(req, res) {
+    console.log(req.cookies);
     res.render("home.ejs");
 });
 
@@ -41,8 +48,12 @@ app.get('/profileSettings', function(req, res) {
   });
 });
 
+app.post("/login", function(req, res) {
+    
+})
 
 app.post("/userprofile", function(req, res) {
+    console.log(req.cookie)
     http.get(apiAddress+"user/"+req.body.searchInput, function(responds)
     {
         responds.on("data", function(data)
@@ -55,14 +66,23 @@ app.post("/userprofile", function(req, res) {
     });
 });
 
-app.post("/login", function(req, res) {
-  res.redirect("/profile");
+app.post("/login", async (req, res) => {
+    const inputPasswort = req.body.inputpasswort;
+    const inputEmail = req.body.inputemail;
+
+    const result = await query("SELECT UserName,UserID FROM User WHERE Email=? AND PwHash=?",[inputEmail, hash(inputPasswort)]); 
+    
+    console.log(result)
+    if (result) console.log(1)
+    else console.log(0)
+
+    res.redirect("/profile");
 });
 
 app.post("/register", function(req, res) {
   res.redirect("/profile");
 });
 
-app.listen(3000, function() {
+app.listen(3001, function() {
     console.log("Server online");
 });
