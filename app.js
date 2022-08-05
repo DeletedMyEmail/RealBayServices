@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express', '4.18.1');
 const app = express();
 const http = require('http');
+const { resourceLimits } = require('worker_threads');
 
 const {con, query} = require('./dbConnector.js')
 const {encryptString, hash} = require('./encryption.js')
@@ -88,10 +89,33 @@ app.post("/login", async (req, res) => {
     else res.render('errorpage.ejs',{error: "Incorrect username or password"});
 });
 
-app.post("/register", function(req, res) {
-  res.redirect("/profile");
+app.post("/register", async (req, res) => {
+    var {
+        inUsername,
+        inEmail,
+        inSite,
+        inPassword,
+        inPwConfirmation
+    } = req.body
+    const result = await query("SELECT UserName,Email FROM User WHERE UserName=? OR Email=?",[inUsername,inEmail]); 
+    console.log(result)
+    if (!result[0]) {
+        if(inPassword != inPwConfirmation) {
+            res.render('errorpage.ejs',{error: "Passwords aren't equal"});
+        }
+        else {
+            await query(`
+            INSERT INTO User (UserName, Email, PwHash, Location)
+            VALUES (?, ?, ?, ?);
+            `, [inUsername, inEmail, hash(inPassword), inSite])
+            res.clearCookie("SeasionID")
+            res.redirect("/login");        
+        }
+    }
+    else res.render('errorpage.ejs',{error: "Username or email already taken, please choose another one"});
 });
 
 app.listen(3000, function() {
     console.log("Server online");
 });
+ 
