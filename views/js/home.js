@@ -30,7 +30,6 @@ const newCarouselItems = (itemArray, active) => {
             <p class="article-footer">` + itemArray[3*j+l].TimeLimit + " | " + itemArray[3*j+l].Rating + `</p>
           </button>
          </div>`
-
       }
       html += `</div></div>`;
   }
@@ -38,7 +37,7 @@ const newCarouselItems = (itemArray, active) => {
 }
 
 const script = async () => {
-var recommendations = await fetchData(`http://10.6.3.96:4242/item/recommendations/foreach/6/ignore/ignore/desc`)
+var recommendations = await fetchData(`http://localhost:4242/item/recommendations/foreach/6/ignore/ignore/desc`)
 
 var htmlcode = "";
 const categories = [`Products`, `Services`, `Bets`];
@@ -87,5 +86,4 @@ recommendations.forEach((item, i) => {
     recommendations[3] = recommendations[3].concat(newBets);
   });
 }
-
 script()
