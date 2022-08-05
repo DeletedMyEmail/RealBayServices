@@ -22,9 +22,12 @@ const newCarouselItems = (itemArray, active) => {
               <textarea name="LongDescription"  rows="4" cols="80" form = ` + itemArray[j].ItemID + ` class= "input">` + itemArray[j].LongDescription + ` </textarea>
               <hr>
               <h2>Produktinormationen</h2>
-              <input type="text" name="Stock"     value= ` + itemArray[j].Stock + `     form = ` + itemArray[j].ItemID + ` class= "input">
+              <label for="Stock` + itemArray[j].ItemID + `">Stock:</label>
+              <input id = "Stock` + itemArray[j].ItemID + `" type="text" name="Stock"     value= ` + itemArray[j].Stock + `     form = ` + itemArray[j].ItemID + ` class= "input">
               <input type="text" name="Timelimit" value= ` + itemArray[j].TimeLimit + ` form = ` + itemArray[j].ItemID + ` class= "input TimeLimit">
-              <input type="text" name="PricePerItem" value= ` + itemArray[j].PricePerItem + ` form = ` + itemArray[j].ItemID + ` class= "input">
+              <br>
+              <label for="Price` + itemArray[j].ItemID + `">Price:</label>
+              <input id = "Price` + itemArray[j].ItemID + `" type="text" name="PricePerItem" value= ` + itemArray[j].PricePerItem + ` form = ` + itemArray[j].ItemID + ` class= "input">
               <input type="text" name="Categorie" value= ` + itemArray[j].Category + ` form = ` + itemArray[j].ItemID + ` class= "input Category">
             </form>
            </div>
