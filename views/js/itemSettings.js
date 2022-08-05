@@ -28,7 +28,14 @@ const newCarouselItems = (itemArray, active) => {
               <br>
               <label for="Price` + itemArray[j].ItemID + `">Price:</label>
               <input id = "Price` + itemArray[j].ItemID + `" type="text" name="PricePerItem" value= ` + itemArray[j].PricePerItem + ` form = ` + itemArray[j].ItemID + ` class= "input">
-              <input type="text" name="Categorie" value= ` + itemArray[j].Category + ` form = ` + itemArray[j].ItemID + ` class= "input Category">
+              <br>
+              <button id = "saveChanges" form = ` + itemArray[j].ItemID + ` type="submit" name="button" class="cbtn cbtn-ver-nav">
+                Save Changes
+              </button>
+
+              <label for="Category" class = "Category">Type:
+                <input type="text" name="Category" value= ` + itemArray[j].Category + ` form = ` + itemArray[j].ItemID + ` class= "input">
+              </label>
             </form>
            </div>
          </div>

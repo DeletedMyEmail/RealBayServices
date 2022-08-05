@@ -53,6 +53,14 @@
   outline: 2px solid white;
 }
 
+#profile-button{
+  z-index: 9999;
+}
+
+#saveChanges{
+  width: auto;
+}
+
 td {
   padding: 10px;
   border: 1px solid white;
@@ -152,7 +160,7 @@ h2 {
 
 .Category {
   position: absolute;
-  left: 510px;
+  left: 600px;
   bottom: 5px;
 }
 
