@@ -21,8 +21,8 @@ const newCarouselItems = (itemArray, active) => {
          if (itemArray[3*j+l] === undefined) break
          html += `
          <div class="col-lg-4 col-sm-12">
-          <button class="cbtn news-item" `/* action= "/item/`+ itemArray[3*j+l].ItemID + `*/`">
-            <div>s
+          <button class="cbtn news-item"  `/* action= "/item/`+ itemArray[3*j+l].ItemID + `*/+`">
+            <div>
              <img src="images/Logo.png" class="article-img" alt="ItemImg">
               <h1 class="article-title">`+ itemArray[3*j+l].ItemName + `</h1>
               <p class="article-desc">` + itemArray[3*j+l].ShortDescription + `</p>
