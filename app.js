@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const express = require('express', '4.18.1');
 const app = express();
 const http = require('http');
-const { resourceLimits } = require('worker_threads');
 
 const {con, query} = require('./dbConnector.js')
 const {encryptString, hash} = require('./encryption.js')
@@ -45,19 +44,23 @@ app.get('/itemSettings', function(req, res) {
 });
 
 app.get('/profileSettings', async (req, res) => {
-    if (isNaN(req.cookies.SeasionID)) {
+    if (isNaN(req.cookies.SessionID)) {
         res.redirect("/login")
         return
     }
-    var userData = await query("SELECT UserName,Email,Location,Tel,Twitter,LinkedIn,Bio FROM User WHERE UserID=(SELECT UserID FROM Seasion WHERE SeasionID=?);",[parseInt(req.cookies.SeasionID)]);
+    var userData = await query("SELECT UserName,Email,Location,Tel,Twitter,LinkedIn,Bio FROM User WHERE UserID=(SELECT UserID FROM Session WHERE SessionID=?);",[parseInt(req.cookies.SessionID)]);
+    
     userData = userData[0]
     if (userData) {
         res.render("profileSettings.ejs", {
             Bio: userData.Bio, UserName: userData.UserName, Email: userData.Email, Twitter: userData.Twitter, 
             Tel: userData.Tel, Bio: userData.Bio, LinkedIn: userData.LinkedIn
         });
-    }    
-    else res.render('errorpage.ejs',{error: "Your seasion expired please sign in again"});
+    }   
+    else {
+        res.clearCookie("SessionID");
+        res.render('errorpage.ejs',{error: "Your session expired please sign in again"});
+    } 
 });
 
 app.post("/userprofile", function(req, res) {
@@ -77,13 +80,12 @@ app.post("/login", async (req, res) => {
     const inputPassword = req.body.inputpasswort;
     const inputEmail = req.body.inputemail;
     const result = await query("SELECT UserName,UserID FROM User WHERE Email=? AND PwHash=?",[inputEmail, hash(inputPassword)]); 
-    
     if (result[0]) {
-        const newSeasionID = hash(new Date(Date.now())+result[0].UserID)
-        res.cookie('SeasionID', newSeasionID, 
+        const newSessionID = hash(new Date(Date.now())+result[0].UserID)
+        res.cookie('SessionID', newSessionID, 
                 { expires: new Date(Date.now() + 60000), httpOnly: false});
         
-        await query("INSERT INTO Seasion VALUES(?,?)",[result[0].UserID, newSeasionID])
+        await query("INSERT INTO Session VALUES(?,?)",[result[0].UserID, newSessionID])
         res.redirect("/");
     }
     else res.render('errorpage.ejs',{error: "Incorrect username or password"});
@@ -108,7 +110,7 @@ app.post("/register", async (req, res) => {
             INSERT INTO User (UserName, Email, PwHash, Location)
             VALUES (?, ?, ?, ?);
             `, [inUsername, inEmail, hash(inPassword), inSite])
-            res.clearCookie("SeasionID")
+            res.clearCookie("SessionID")
             res.redirect("/login");        
         }
     }

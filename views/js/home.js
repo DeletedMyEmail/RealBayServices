@@ -27,7 +27,7 @@ const newCarouselItems = (itemArray, active) => {
               <h1 class="article-title">`+ itemArray[3*j+l].ItemName + `</h1>
               <p class="article-desc">` + itemArray[3*j+l].ShortDescription + `</p>
             </div>
-            <p class="article-footer">` + itemArray[3*j+l].TimeLimit + " | " + itemArray[3*j+l].Rating + `</p>
+            <p class="article-footer">` + itemArray[3*j+l].TimeLimit + ` | ⭐⭐⭐⭐⭐</p>
           </button>
          </div>`
       }
@@ -69,19 +69,19 @@ recommendations.forEach((item, i) => {
   
   $("#nextProducts").on("click", async () => {
     const lowestID = recommendations[0][recommendations[0].length-1].ItemID-1;
-    const newProduct= await fetchData(`http://10.6.3.96:4242/item/recommendations/product/3/ignore/`+lowestID+`/desc`);
+    const newProduct= await fetchData(`http://localhost:4242/item/recommendations/product/3/ignore/`+lowestID+`/desc`);
     $("#carousel-inner0").append(newCarouselItems(newProduct, false));  
     recommendations[0] = recommendations[0].concat(newProduct);
   });
   $("#nextServices").on("click", async () => {
       const lowestID = recommendations[1][recommendations[1].length-1].ItemID-1;
-      const newServices = await fetchData(`http://10.6.3.96:4242/item/recommendations/service/3/ignore/`+lowestID+`/desc`);
+      const newServices = await fetchData(`http://localhost:4242/item/recommendations/service/3/ignore/`+lowestID+`/desc`);
       $("#carousel-inner1").append(newCarouselItems(newServices, false));  
       recommendations[1] = recommendations[1].concat(newServices);
     });
   $("#nextBets").on("click", async () => {
     const lowestID = recommendations[3][recommendations[3].length-1].ItemID-1;
-    const newBets = await fetchData(`http://10.6.3.96:4242/item/recommendations/bet/3/ignore/`+lowestID+`/desc`);
+    const newBets = await fetchData(`http://localhost:4242/item/recommendations/bet/3/ignore/`+lowestID+`/desc`);
     $("#carousel-inner3").append(newCarouselItems(newBets, false));  
     recommendations[3] = recommendations[3].concat(newBets);
   });  
