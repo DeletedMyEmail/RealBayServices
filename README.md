@@ -11,8 +11,9 @@ Already implemented are:
 
 * Database 
 * API 
-* Frontend with sample data
+* Frontend with data via api
 * Find user profiles via searchbar
+* sign up/in
 
 <!-- API -->
 # API
@@ -116,6 +117,4 @@ following paths start with */user/...*
 <!-- Roadmap -->
 # Roadmap
 
-1. add settings to the frontend
-2. tags dropdown menu
-3. login
+1. tags dropdown menu
