@@ -11,8 +11,9 @@ Already implemented are:
 
 * Database 
 * API 
-* Frontend with sample data
+* Frontend with data via api
 * Find user profiles via searchbar
+* sign up/in
 
 <!-- API -->
 # API
