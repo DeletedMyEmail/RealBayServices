@@ -116,6 +116,4 @@ following paths start with */user/...*
 <!-- Roadmap -->
 # Roadmap
 
-1. add settings to the frontend
-2. tags dropdown menu
-3. login
+1. tags dropdown menu
