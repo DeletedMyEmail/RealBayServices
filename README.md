@@ -6,7 +6,7 @@
 ![RealBay Home Screen](readme/RealBayHomeScreen.png)
 
 Everyone knows the problem when the tea is empty again and the way to the trainees is too long to force them to change it.
-For this case we have developed 'RealBay Services', the site for in-house services, bets and products.
+For this case we have developed 'RealBay Services', the site for services, bets and products.
 Already implemented are:
 
 * Database 
